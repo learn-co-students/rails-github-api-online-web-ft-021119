@@ -7,9 +7,20 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def authenticate_user
+	def authenticate_user
+		client_id = ENV['GITHUB_CLIENT_ID']
+		redirect_uri = "http://localhost:3000/auth"
+      github_url = "https://github.com/login/oauth/authorize?client_id=#{client_id}&redirect_uri=#{redirect_uri}"
+		redirect_to github_url unless logged_in?
+
+		# unless logged_in?
+		# 	response = Faraday.get "https://github.com/login/oauth/authorize" do |req|
+		# 		req.body = { 'client_id': client_id, 'redirect_uri': redirect_uri}
+		# 	end
+		# end
   end
 
   def logged_in?
+   !!session[:token]
   end
 end
