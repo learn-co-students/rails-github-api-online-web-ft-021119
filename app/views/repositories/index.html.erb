@@ -1,5 +1,16 @@
 <div class = "container">
   <h1>Repos</h1>
+ <h2>Hello </h2>
+ <%= @user %>
+
+ <h1>Repos</h1>
+<ul>
+ <% @repositories.each do |r| %>
+<li><%= r['name'] %></li>
+<% end %>
+</ul>
+
+
   <!-- List repositories and display username here! -->
 
   <%= form_tag("/repositories/create", method: "post") do %>
