@@ -1,5 +1,5 @@
 class RepositoriesController < ApplicationController
-  
+
 
   def index
     response = Faraday.get "https://api.github.com/user" do |req|
@@ -14,7 +14,7 @@ class RepositoriesController < ApplicationController
     end
 
    @repos = JSON.parse(repo_response.body)
-   binding.pry
+   #binding.pry
   end
 
 end
