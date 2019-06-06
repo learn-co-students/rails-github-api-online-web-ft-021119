@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'rspec'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'
 # Use sqlite3 as the database for Active Record
@@ -29,6 +29,8 @@ gem 'pry'
 gem 'faraday'
 # Dot-env
 gem 'dotenv-rails'
+
+gem 'rb-readline'
 
 #Testing
 group :test do
