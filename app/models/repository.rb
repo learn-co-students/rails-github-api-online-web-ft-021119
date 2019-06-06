@@ -1,2 +1,2 @@
-class Repository
-end 
+class Repository < ActiveRecord::Base
+end
